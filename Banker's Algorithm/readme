@@ -1,0 +1,5 @@
+# compile
+ 	gcc banker_final.c -std=c99 -pthread
+
+# execute
+ 	./a.out

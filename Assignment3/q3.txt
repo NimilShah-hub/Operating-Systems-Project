@@ -1,0 +1,17 @@
+There are two ways to interface with C or C++. The easier method is to specify a language using assembler directives. (coming next) This feature is available with MASM and TASM. Another old method is to do manually what can be done automatically. Real knowledge lies in the older method. I have summarized the points in brief which are absolutely necessary for interfacing.
+
+    You must give code segment name _TEXT if you are using Microsoft C, Turbo C compiler.
+
+    You must give data segment name _DATA if you are using above mentioned compilers. These names vary from compiler to compiler.
+
+    Third, you must understand how parameter are passed in C. In the function calling syntax of: 
+
+        function_name ( arg1, arg2, arg3, ………, argn ) ; 
+
+         
+
+        the values of each argument are pushed on stack in reverse order. Thus argument argn is pushed on stack first then arg(n-1) and so on till arg1. Parameters can be passed either by using pointer or using direct value. In compact, large and huge memory model the data pointer require 32 bit size. That must be noted.
+
+    The assembly language routines to be called from a C program must begin with a underscore character (_). e.g. _myfunct
+
+    Remember to save any special purpose registers (such as CS, DS, SS, SI, DI) your assembly program may disturb. Failure to save then you may find undesired effects when control is returned to the C program. 
